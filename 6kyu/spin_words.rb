@@ -5,8 +5,8 @@ but with all five or more letter words reversed
 (Just like the name of this Kata).
 Strings passed in will consist of only letters and spaces.
 Spaces will be included only when more than one word is present.
-=end
-=begin first solution sans refactoring
+
+first solution sans refactoring
 def spinWords(string)
   words = string.split(" ")
   words.each do |x|
@@ -16,10 +16,19 @@ def spinWords(string)
   end
       new_string = words.join(" ")
 end
-=end
+or with a little refactoring...
 
 def spinWords(string)
   words = string.split(" ")
   words.each {|x| x.reverse! if x.length >= 5}
   words.join(" ")
+end
+and next supercharged!
+=end
+def spinWords(string)
+  string.split.map {|x| x.length >= 5 ? s.reverse : s}.join(" ")
+
+  #or, not mine btw
+def spinWords(string)
+    string.gsub(/\w{5,}/, &:reverse)
 end
