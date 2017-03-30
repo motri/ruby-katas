@@ -32,3 +32,7 @@ def spinWords(string)
 def spinWords(string)
     string.gsub(/\w{5,}/, &:reverse)
 end
+
+def spinWords(string)
+  string.gsub(/\w{5,}/){ $&.reverse }
+end
