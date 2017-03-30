@@ -6,7 +6,7 @@ but with all five or more letter words reversed
 Strings passed in will consist of only letters and spaces.
 Spaces will be included only when more than one word is present.
 =end
-
+=begin first solution sans refactoring
 def spinWords(string)
   words = string.split(" ")
   words.each do |x|
@@ -15,4 +15,11 @@ def spinWords(string)
       end
   end
       new_string = words.join(" ")
+end
+=end
+
+def spinWords(string)
+  words = string.split(" ")
+  words.each {|x| x.reverse! if x.length >= 5}
+  words.join(" ")
 end
