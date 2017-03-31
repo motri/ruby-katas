@@ -2,7 +2,7 @@
 Complete the solution so that it returns a formatted string.
 The return value should equal "Value is VALUE" where value
 is a 5 digit padded number.
-=end
+
 def solution(value)
 len = value.to_s.length
   if len == 1
@@ -16,4 +16,10 @@ len = value.to_s.length
   else
     return "Value is #{value}"
   end
+end
+=end
+
+#refactored
+def solution(value)
+    return "Value is " + "0" * (5 - value.to_s.length) + "#{value}"
 end
